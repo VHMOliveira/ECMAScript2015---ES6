@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            // 3 escopos: normal, função e global
+            /*
+            Existe duas condições onde a variável criada com var, sofre hosting para o escopo superior
+            permitindo que a variável seja utilizada em partes do código
+
+            Já let impede que a variável seja utilizada fora do escopo definido
+            */
+            var serie = 'friends';
+
+            function x(){
+                serie = 'GOT';
+                if(true){
+                    console.log('Escopo if sem var: ' + serie);
+                }
+                if(true){
+                    serie = 'XUI';
+                    console.log('Escopo if com var: ' + serie);
+                }
+                console.log(serie);
+            }
+
+            x();
+
+            if(true){
+                console.log('Global: ' + serie);
+            }
+            
+            if(true){
+                let aux = 'jjjj'
+            }
+
+            //console.log(aux);
+            
+            /*
+            Const é utilizado para constantes que não irão ter alteração no descorrer do código
+            Para boa prática as constantes são criadas com caracteres maiúsculos 
+            */
+
+            const CONSTANTE = 'teste'
+
+            console.log(CONSTANTE);
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

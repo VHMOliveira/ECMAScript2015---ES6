@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+            class Produto{
+                constructor(descricao, preco){
+                    this.descricao = descricao;
+                    this.preco = preco;
+                }
+
+                verDescricao(){
+                    console.log(`${this.descricao} por apenas: ${this.preco}`);
+                }
+            }
+
+            let produto = new Produto('Notebook', 2200);
+            produto.verDescricao();
+            
+            //-------------------------------------------------
+            /*
+            Objetos literais são frequentimente utilizados quando não existe estruturar uma classe específica
+            para a situação, no caso objetos únicos.
+
+            Exemplo de uso:
+            formulário -> servidor
+                recupera dados do formulário e monta um objeto literal
+                    obj literal -> JSON -> HTTP -> Servidor -> Armazena
+
+            para objetos literais se utiliza chave & valor que são separados por vírgula
+
+            o nome a esquerda é  a chave e a direita é o valor daquela chave
+            a sintaxe é nome: valor,
+            */
+            let produtoLiteral = {
+                descricao: 'Notebook',
+                preco: 1500,
+                verDescricao: function(){
+                    console.log(`${this.descricao} por apenas: ${this.preco}`);
+                }
+            }
+
+            produtoLiteral.verDescricao();
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

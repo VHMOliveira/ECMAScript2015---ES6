@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+           let nome = 'Jorge';
+           let idade = 29;
+           let sexo = 'Masculino';
+           let profissao = 'Programador';
+
+           let objeto = {
+               nome: nome,
+               idade: idade,
+               sexo: sexo,
+               profissao: profissao,
+               exibirResumo: function(){
+                   console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, ${this.profissao}`)
+               },
+           }
+
+           console.log(objeto);
+           objeto.exibirResumo();
+
+           let objeto2 = {
+               //em situações onde a chave possui o mesmo nome que o valor, podemos omitir o nome
+               nome,
+               idade,
+               sexo,
+               profissao,
+               exibirResumo(){
+                   console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, ${this.profissao}`)
+               },
+           }
+
+           console.log(objeto2);
+           objeto2.exibirResumo();
+
+           //alterando atributos
+           objeto2.nome = 'João';
+           objeto2.exibirResumo();
+
+           //adicionando atributos
+           objeto2.pais = 'Brasil';
+           console.log(objeto2);
+
+           //adicionando fução
+           objeto2.dizerOI = () => console.log('Olá, tudo bem?');
+
+           objeto2.dizerOI();
+
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

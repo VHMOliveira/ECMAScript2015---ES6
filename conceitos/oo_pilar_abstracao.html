@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+            //modelo objeto
+            class ContaBancaria{
+
+                constructor(){
+                    // por convenção é utilizado o _ para indicar que o atributo não pode ser acessado
+
+                    this._agencia = 1075;
+                    this._numeroConta = 8351125;
+                    this._saldo = 50;
+                    this._limite = 450;
+                }
+
+                depositar(valorDepositado){
+                    this.saldo += valorDepositado;
+                }
+
+                sacar(valorRetirar){
+                    this.saldo -= valorRetirar;
+                }
+
+                consultarSaldo(){
+                    return this.saldo;
+                }
+
+                get limiteVerificar(){
+                    return this.limite;
+                }
+
+                set limiteMudar(valor){
+                    return this.limite = valor;
+                }
+            }
+
+            let x = new ContaBancaria();
+
+            console.log(x.consultarSaldo());
+            x.depositar(20);
+            console.log(x.consultarSaldo());
+            x.sacar(10);
+            console.log(x.consultarSaldo());
+            console.log(x.limiteVerificar);
+            x.limiteMudar = 500
+            console.log(x.limiteVerificar);
+
+            class Animal{
+                constructor(cor, tamanho){
+                    this.cor = cor;
+                    this.tamanho = tamanho;
+                }
+
+                dormir(){
+                    console.log('dormir');
+                }
+            }
+
+            class Cachorro extends Animal{
+                
+                constructor(orelha){
+                    super('branco', 30);
+                    this.orelhas = orelha;
+                }
+
+                correr(){
+                    console.log('correr');
+                }
+
+                rosnar(){
+                    console.log('rosnar');
+                }
+            }
+
+            class Passaro extends Animal{
+                
+                constructor(bico){
+                    super('preto', 10);
+                    this.bico = bico;
+                }
+
+                voar(){
+                    console.log('voar');
+                }
+            }
+
+            let cachorro = new Cachorro('Grandes e caídas');
+            let passaro  = new Passaro('curto');
+
+            console.log(cachorro);
+            console.log(passaro);
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>
