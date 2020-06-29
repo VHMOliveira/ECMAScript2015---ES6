@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+           /*
+           *Operador destructuring é um operador de desestruturação, ele remove valores de estruturas
+           */
+
+           //array
+
+           let frutas = ['uva','maçã','mamão','pera'];
+
+           let a = frutas[0];
+           let b = frutas[1];
+           let c = frutas[2];
+           let d = frutas[3];
+
+           console.log(a,b,c,d);
+
+            //utilizando o operador destructuring 
+            let [x,y,,z,w='abacaxi'] = frutas;//deixar em branco afirma q o indice foi pulado
+            
+            console.log(x,y,z,w);
+
+            let coisas = [['uva','maçã','mamão','pera'],['José', 'Maria']];
+            let [aux,[te,ti]] = coisas;
+
+            console.log(aux,te,ti);
+
+            /*
+            
+            */
+            
+            //objeto literal -- fazendo uma composição
+            let produto = {
+                descricao: 'Notebook',
+                preco: 1800,
+                detalhes:{
+                    fabricante: 'abc',
+                    modelo: 'xyz'
+                }
+            }
+
+            //fazendo a desestruturação de valores dentro de objeto
+            //para fazer esse processo se utiliza o token {}
+            /*
+            token:
+            array => []
+            objeto => {}
+            */
+            //let {descricao, preco} = produto;
+            //console.log(descricao,preco);
+            
+            //let {descricao:ds, preco:pr} = produto;
+            //console.log(ds,pr);
+
+            //let {descricao:ds, preco:pr, desconto} = produto;
+            //console.log(ds,pr, desconto);
+
+            //let {descricao:ds, preco:pr = 100, desconto = 5} = produto;
+            //console.log(ds,pr, desconto);
+
+            let { detalhes: {fabricante, modelo}} = produto;
+            console.log(fabricante, modelo);
+
+            //destructuring dentro de função, o mesmo processo vale para array e objeto
+            //array
+            let arr = [10,20,30,40];
+
+            function teste([a,b]){
+                console.log(a,b);
+            }
+
+            teste(arr);
+
+            let hjk = {
+                asa:10,
+                bsa:20,
+                csa:30,
+                dsa:40
+            }
+
+            function teste2(asa,bsa,csa){
+                console.log(asa,bsa,csa);
+            }
+
+            teste2(hjk);
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

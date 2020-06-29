@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+           let Carro = function(){
+            
+            //para simular um atributo privado, se cria variáveis do escopo da função
+            var velocidadeMaxima = 180;
+            var quilometrosRodados = 0;
+
+            
+            this.cor = 'amarelo';
+            this.modelo = 'Chevette';
+            this.velocidadeAtual = 0;
+            
+
+            this.acelerar = function(){
+                let velocidade = this.getVelocidadeAtual() + 30;
+                if(velocidade > velocidadeMaxima){
+                    velocidade = velocidadeMaxima;
+                }
+                this.setVelocidadeAtual(velocidade);
+            }
+
+            this.getVelocidadeAtual = function(){
+                return this.velocidadeAtual;
+            }
+
+            this.setVelocidadeAtual = function(velocidadeAtual){
+                this.velocidadeAtual += velocidadeAtual;
+            }
+
+            var setQuilometrosRodados = function(q){
+                quilometrosRodados += q;
+            }
+           }
+
+           //aqui é gerado o objeto pela função criada
+           let carro = new Carro();
+
+           console.log(`A velocidade atual é: ${carro.getVelocidadeAtual()}`);
+           carro.acelerar();
+           console.log(`A velocidade atual é: ${carro.getVelocidadeAtual()}`);
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

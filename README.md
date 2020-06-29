@@ -12,3 +12,9 @@ variáveis const; <br/>
 template string; <br/>
 funções; <br/>
 OO; <br/>
+funções construtoras; <br/>
+OO literal; <br/>
+design factory; <br/>
+prototype; <br/>
+rest & spread; <br/>
+destructuring assignment; <br/>

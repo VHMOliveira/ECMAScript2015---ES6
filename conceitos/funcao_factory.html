@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+           let bicicleta1 = {
+               cor: 'Branca',
+               marcha: 'única',
+               aro: 12,
+               pedalar(){
+                   console.log('Método pedalar executado');
+               }
+           }
+
+           //implementando uma factory de bicicleta
+           let BicicletaFactory = function(cor,marcha,aro){
+               return{
+                   cor,
+                   marcha,
+                   aro,
+                   pedalar(){
+                       console.log('Método pedalar');
+                   }
+               }
+           }
+
+           let bicicleta2 = BicicletaFactory('vermelho','18', 26);
+
+           let bicicleta3 = BicicletaFactory('verde','28', 18);
+           console.log(bicicleta2);
+           console.log(bicicleta3);
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>

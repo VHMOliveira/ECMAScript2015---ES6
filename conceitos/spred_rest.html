@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            
+           //contexto spread
+           //ele separa os valores da variável 
+
+           //string
+           let tituloArtigo = 'Como utilizar o operador rest/spread';
+
+           console.log(tituloArtigo);
+           console.log(...tituloArtigo);
+           console.log([...tituloArtigo]);
+
+            //arrays
+           let listaA = ['maçã','açaí','banana'];
+           let listaB = ['vidro','aço','lixa'];
+           let listaC = [...listaA, ...listaB];
+
+           console.log(listaC);
+
+            //object
+
+            let pessoa = {nome:'João', idade:28};
+            let clone = {endereco: 'Rua abc', ...pessoa};
+
+            console.log(clone);
+
+            //contexto rest
+
+            function soma(... param){
+                let resultado = 0;
+                param.forEach(v =>resultado+=v);
+                return resultado;
+
+            }
+
+            console.log(soma(3,5,6,7));
+
+            function multiplicador(p, ...valor){
+
+                let resultado =0;
+
+                valor.forEach(v => resultado += (p*v));
+
+                return resultado;
+            }
+
+            console.log(multiplicador(2,3,4,5,7,9,12));
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>
